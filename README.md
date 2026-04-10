@@ -1,4 +1,4 @@
-# 🚀 JobTrackerPro
+# JobTrackerPro
 
 A modern full-stack **Job Application Tracker** built using **Java Servlets, MySQL, and HTML/CSS**.
 
