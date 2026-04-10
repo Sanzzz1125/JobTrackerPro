@@ -224,10 +224,13 @@ Landing Page → Login / Register → Dashboard → View Jobs → Add / Edit / D
 ## 📸 Screenshots
 
 ### 🏠 Landing Page
-![Landing Page](images/HomePage.png)
+![Landing Page](images/homePage.png)
 
-### 📊 Dashboard
-![Dashboard](images/Dashboard.png)
+### 📊 Admin Dashboard
+![Dashboard](images/admin_Dashboard.png)
+
+### 📊 User Dashboard
+![Dashboard](images/user_Dashboard.png)
 
 ### 📄 Jobs Page
 ![Jobs](images/jobs.png)
