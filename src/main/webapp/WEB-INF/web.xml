@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>JobTrackerPro</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <!-- Explicit servlet mappings - ensures Tomcat finds servlets even if annotation scanning is off -->
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>controller.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewJobsServlet</servlet-name>
+        <servlet-class>controller.ViewJobsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewJobsServlet</servlet-name>
+        <url-pattern>/viewJobs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddJobServlet</servlet-name>
+        <servlet-class>controller.AddJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddJobServlet</servlet-name>
+        <url-pattern>/addJob</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditJobServlet</servlet-name>
+        <servlet-class>controller.EditJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditJobServlet</servlet-name>
+        <url-pattern>/editJob</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateJobServlet</servlet-name>
+        <servlet-class>controller.UpdateJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateJobServlet</servlet-name>
+        <url-pattern>/updateJob</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteJobServlet</servlet-name>
+        <servlet-class>controller.DeleteJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteJobServlet</servlet-name>
+        <url-pattern>/deleteJob</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>controller.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminActionServlet</servlet-name>
+        <servlet-class>controller.AdminActionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminActionServlet</servlet-name>
+        <url-pattern>/adminAction</url-pattern>
+    </servlet-mapping>
+
+</web-app>

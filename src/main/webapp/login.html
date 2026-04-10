@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – JobTrackerPro</title>
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        body { flex-direction: column; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="auth-box">
+        <div class="brand">🚀 JobTrackerPro</div>
+        <div class="sub">Sign in to your account</div>
+
+        <div id="msg"></div>
+
+        <form action="login" method="post">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="you@example.com" required autofocus>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-dark btn-full" style="margin-top:8px;">Sign In</button>
+        </form>
+
+        <div class="auth-links" style="margin-top:20px;">
+            New user? <a href="register.html">Create an account</a>
+            &nbsp;|&nbsp; <a href="index.html">← Home</a>
+        </div>
+    </div>
+
+    <script>
+        const p = new URLSearchParams(window.location.search);
+        const m = document.getElementById('msg');
+        if (p.get('error'))   m.innerHTML = '<div class="alert alert-error">'   + decodeURIComponent(p.get('error'))   + '</div>';
+        if (p.get('success')) m.innerHTML = '<div class="alert alert-success">' + decodeURIComponent(p.get('success')) + '</div>';
+    </script>
+</body>
+</html>

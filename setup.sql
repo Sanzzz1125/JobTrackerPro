@@ -1,0 +1,32 @@
+-- ============================================================
+-- JobTrackerPro - Database Setup
+-- Run: mysql -u root -p < setup.sql
+-- ============================================================
+
+CREATE DATABASE IF NOT EXISTS job_db;
+USE job_db;
+
+CREATE TABLE IF NOT EXISTS users (
+    id         INT AUTO_INCREMENT PRIMARY KEY,
+    username   VARCHAR(100) NOT NULL,
+    email      VARCHAR(255) NOT NULL UNIQUE,
+    password   VARCHAR(255) NOT NULL,
+    role       VARCHAR(20)  NOT NULL DEFAULT 'user',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS jobs (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    user_id      INT          NOT NULL,
+    company      VARCHAR(255) NOT NULL,
+    role         VARCHAR(255) NOT NULL,
+    status       VARCHAR(50)  NOT NULL DEFAULT 'Applied',
+    notes        TEXT,
+    applied_date DATE,
+    created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Default admin account (change password after first login)
+INSERT IGNORE INTO users (username, email, password, role)
+VALUES ('Admin', 'admin@jobtrackerpro.com', 'admin123', 'admin');
