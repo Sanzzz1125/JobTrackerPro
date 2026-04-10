@@ -125,8 +125,8 @@ cd JobTrackerPro
 Open **MySQL Command Line Client** and run:
 
 ```sql
-CREATE DATABASE IF NOT EXISTS job_db;
-USE job_db;
+CREATE DATABASE IF NOT EXISTS job_tracker;
+USE job_tracker;
 
 CREATE TABLE IF NOT EXISTS users (
     id         INT AUTO_INCREMENT PRIMARY KEY,
